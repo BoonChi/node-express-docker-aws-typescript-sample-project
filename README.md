@@ -1,1 +1,1 @@
-# yelpcamp-typescript-aws-s3
+# Build node app with cloud, typescript and aws
