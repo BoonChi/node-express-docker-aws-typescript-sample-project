@@ -4,4 +4,4 @@ export interface IFile {
     type: string;
     extension: string;
     content: Buffer;
-  }
+}

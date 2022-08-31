@@ -10,8 +10,6 @@ const storage = multer.diskStorage({
       }
 });
 
-const memoryStorage = multer.memoryStorage();
+const fileUploadToLocal = multer({ storage: storage });
 
-const multerUpload = multer({ storage: storage });
-
-export {multerUpload, memoryStorage};
+export {fileUploadToLocal};

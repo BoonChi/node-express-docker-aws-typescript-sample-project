@@ -2,11 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import {configs} from '@config/index';
 import router from '@controller/router';
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded());
 app.use('/uploads', express.static('upload'));
 router(app);
 

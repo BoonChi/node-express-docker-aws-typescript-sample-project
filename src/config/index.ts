@@ -1,5 +1,8 @@
+import * as dotenv from 'dotenv';
+process.env.NODE_ENV==="dev" ? dotenv.config() : null;
+
 const config = {
-    PORT: process.env.PORT || 8990,
+    PORT: process.env.PORT || 1002,
     url: process.env.URL || 'http://localhost',
     mongoDB : {
         user: process.env.MONGO_USER || 'mongoUser',
@@ -9,10 +12,10 @@ const config = {
     },
     defaultAvatar: "public/avatar.png",
     s3 : {
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "fakeValue",
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID || "fakeValue",
-        region: process.env.AWS_REGION || "fakeValue",
-        bucket : process.env.AWS_BUCKET || "fakeValue",
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID as string,
+        region: process.env.AWS_REGION as string,
+        bucket : process.env.AWS_BUCKET as string,
     },
     imageDir: "upload"
 }

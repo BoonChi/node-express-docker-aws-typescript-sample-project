@@ -7,6 +7,9 @@ class s3Service implements IS3Service {
     client: S3Client;
     bucketName: string;
     constructor() {
+        if(!configs.s3.accessKeyId || !configs.s3.secretAccessKey || !configs.s3.bucket) {
+            throw new Error("AWS S3 BUCKET Configuration Failure");
+        }
         this.client = new S3Client({
             region: configs.s3.region,
             credentials: {
@@ -49,7 +52,6 @@ class s3Service implements IS3Service {
         if(!bucketIsExisting.$metadata.httpStatusCode) {
             await this.create();
         }
-        console.log(file)
         return await this.put(file);
     }
 

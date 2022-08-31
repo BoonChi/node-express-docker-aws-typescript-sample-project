@@ -1,5 +1,7 @@
+import { IFile } from "@config/i-file"
+
 export interface IUserCreateReq extends IUserGetReq {
-    images?: File
+    images?: IFile[]
 }
 
 export interface IUserGetReq {
